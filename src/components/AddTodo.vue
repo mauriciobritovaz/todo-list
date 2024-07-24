@@ -26,10 +26,10 @@ const onSave = () => {
     done: false
   }
 
-  if(newTodo.title.trim().length > 0){
+  if(newTodo.title.length > 0 && !alreadyHasTodo(newTodo.title)){
     addTodo(newTodo);
+    title.value = ''
   }
-  title.value = ''
 }
 </script>
 

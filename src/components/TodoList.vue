@@ -5,18 +5,22 @@
       :key="todo.title"
       :value="todo.title"
     >
-      <VListItemAction end>
-        <VCheckbox v-model="todo.done"></VCheckbox>
-      </VListItemAction>
-      <VListItemTitle>{{ todo.title }}</VListItemTitle>
-      <VListItemAction start>
-        <VBtn
-          color="grey-lighten-1"
-          icon="mdi-close"
-          variant="text"
-          @click="handleDelete(todo.title)"
-        ></VBtn>
-      </VListItemAction>
+      <template v-slot:prepend>
+        <VListItemAction start>
+          <VCheckboxBtn v-model="todo.done" :label="todo.title" data-testid="checkTodo" />
+        </VListItemAction>
+      </template>
+      <template v-slot:append>
+        <VListItemAction end>
+          <VBtn
+            color="grey-lighten-1"
+            icon="mdi-close"
+            variant="text"
+            @click="handleDelete(todo.title)"
+            data-testid="deleteTodo"
+          ></VBtn>
+        </VListItemAction>
+      </template>
     </VListItem>
   </VList>
 </template>
