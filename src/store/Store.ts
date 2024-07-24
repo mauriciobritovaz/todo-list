@@ -1,15 +1,12 @@
 import { Todo } from "@/types/Todo";
 import { computed, reactive } from "vue";
+import { todoMock } from "@/utils/TodoMock";
 
 interface Store {
   todoList: Todo[]
 }
 
-const defaultStore = {
-  todoList: []
-}
-
-const todoStore = reactive<Store>(defaultStore);
+const todoStore = reactive<Store>(todoMock());
 
 export default () => {
   const getAllTodos = () => {

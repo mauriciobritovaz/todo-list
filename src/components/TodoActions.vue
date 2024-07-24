@@ -4,6 +4,7 @@
       color="primary"
       elevation="2"
       @click="undoAll()"
+      data-testid="undoSelected"
     >
       Desfazer seleção
     </VBtn>
@@ -11,6 +12,7 @@
       color="red-accent-4"
       elevation="2"
       @click="deleteAll()"
+      data-testid="deleteAll"
     >
       Deletar todos os itens
     </VBtn>
